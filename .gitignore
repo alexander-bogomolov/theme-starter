@@ -1,4 +1,5 @@
 # Ignore paths that contain generated content.
+nbproject/
 assets/third-party/*
 assets/css/dev/*
 assets/css/prod/*
