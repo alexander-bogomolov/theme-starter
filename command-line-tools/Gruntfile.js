@@ -1,10 +1,12 @@
 /*global module:false*/
 module.exports = function (grunt) {
 
-  // Project configuration.
+  // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     // Meta data
+    // Generates comment block over the code.
     meta: {
       banner: '/**\n' +
         ' * Project: <%= pkg.title || pkg.name %>\n' +
@@ -14,14 +16,15 @@ module.exports = function (grunt) {
         ' * Author: <%= pkg.author.name %>\n' +
         ' */'
     },
-    /**
-     * COMPASS
-     */
+
+
+    // Compass
+    // Define configuration for the compass module: grunt-contrib-compass
     compass: {
       dev: {
         options: {
           environment: 'development',
-          outputStyle: 'nested',
+          outputStyle: 'expanded',
           sassDir: '../assets/sass',
           cssDir: '../assets/css/dev',
           imagesDir: '../assets/images',
@@ -43,48 +46,10 @@ module.exports = function (grunt) {
         relativeAssets: true
       }
     },
-    /**
-     * JAVASCRIPT
-     */
 
-    // Concatenate
-    concat: {
-      options: {
-        // define a string to put between each file in the concatenated output
-        separator: ';'
-      },
-      // Die Anwendung zum Verwalten von Videos
-      application: {
-        src: [
-          '<banner>',
-          // ThirdParty
-          // '../assets/third-party/',
 
-          // Globale Module
-          // '../assets/js/modules/',
-
-          // Inits
-          '../assets/js/init/application.init.js'
-        ],
-        dest: '../assets/js/application.js'
-      }
-    },
-    // Minify
-    uglify: {
-      application: {
-        files: {
-          '../assets/js/application.min.js': [
-            '<banner>',
-            '<%= concat.application.dest %>'
-          ]
-        }
-      }
-    },
-    qunit: {
-      files: ['../assets/test/**/*.html']
-    },
-    /* Validation options
-     *******************************************************************************/
+    // Detect errors and potential problems in JavaScript code
+    // and used to enforce coding conventions.
     jshint: {
       beforeconcat: [
         'Gruntfile.js',
@@ -92,7 +57,6 @@ module.exports = function (grunt) {
         '../assets/js/modules/*.js',
         '../assets/js/init/*.js'
       ],
-
       options: {
         // Enforcing Options - These options tell JSHint to be more strict towards your code.
         curly: true, // This option requires you to always put curly braces around blocks in loops and conditionals.
@@ -125,11 +89,53 @@ module.exports = function (grunt) {
           jQuery: true,
           Modernizr: true
         }
-      }
+  }
 
     },
-    /* Watch Task
-     *******************************************************************************/
+
+
+    // Concatenate all JavaScript files in one file: application.js
+    concat: {
+      options: {
+        // define a string to put between each file in the concatenated output
+        separator: ';'
+      },
+      application: {
+        src: [
+          '<banner>',
+          // ThirdParty
+          // '../assets/third-party/',
+
+          // Globale Module
+          // '../assets/js/modules/',
+
+          // Inits
+          '../assets/js/init/application.init.js'
+        ],
+        dest: '../assets/js/application.js'
+      }
+    },
+
+
+    // Minify the concated JavaScript file.
+    uglify: {
+      application: {
+        files: {
+          '../assets/js/application.min.js': [
+            '<banner>',
+            '<%= concat.application.dest %>'
+          ]
+        }
+      }
+    },
+
+    // Run QUnit - JavaScript unit testing framework
+    qunit: {
+      files: ['../assets/test/**/*.html']
+    },
+
+
+    // Watch Task
     watch: {
       files: [
         '../assets/sass/*',
@@ -141,7 +147,7 @@ module.exports = function (grunt) {
 
   });
 
-
+  // Load modules
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -149,9 +155,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
+  // Register Tasks
+  // Run: grunt taskname
+  // Example: grunt css
   grunt.registerTask('test', ['jshint:beforeconcat', 'qunit']);
-  grunt.registerTask('css', ['compass:dev']);
+  grunt.registerTask('css-dev', ['compass:dev']);
+  grunt.registerTask('css-prod', ['compass:prod']);
   grunt.registerTask('default', ['compass:dev', 'jshint:beforeconcat', 'concat']);
-  grunt.registerTask('prod', ['compass-clean', 'compass:prod', 'jshint:beforeconcat', 'concat', 'uglify']);
+  grunt.registerTask('prod', ['compass:prod', 'jshint:beforeconcat', 'concat', 'uglify']);
 
 };
