@@ -1,0 +1,125 @@
+/*!
+ * Project:
+ * Version: 0.0.0 - 2013-01-01
+ * Homepage: http://www.eos-uptrade.de
+ * Copyright (c) 2013 EOS UPTRADE GmbH
+ * Author: Alexander Bogomolov
+ */
+
+// Core variables and mixins
+@import "../third-party/bootstrap-sass/lib/variables";
+@import "variables"; // Überschreiben von Variablen aus Bootstrap
+
+@import "../third-party/bootstrap-sass/lib/mixins";
+
+// CSS Reset
+@import "../third-party/bootstrap-sass/lib/reset";
+
+// Grid system and page structure
+@import "../third-party/bootstrap-sass/lib/scaffolding";
+@import "../third-party/bootstrap-sass/lib/grid";
+@import "../third-party/bootstrap-sass/lib/layouts";
+
+// Base CSS
+@import "../third-party/bootstrap-sass/lib/type";
+@import "../third-party/bootstrap-sass/lib/code";
+@import "../third-party/bootstrap-sass/lib/forms";
+@import "../third-party/bootstrap-sass/lib/tables";
+
+// Components: common
+@import "../third-party/bootstrap-sass/lib/sprites";
+@import "../third-party/bootstrap-sass/lib/dropdowns";
+@import "../third-party/bootstrap-sass/lib/wells";
+@import "../third-party/bootstrap-sass/lib/component-animations";
+@import "../third-party/bootstrap-sass/lib/close";
+
+// Components: Buttons & Alerts
+@import "../third-party/bootstrap-sass/lib/buttons";
+@import "../third-party/bootstrap-sass/lib/button-groups";
+@import "../third-party/bootstrap-sass/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+@import "../third-party/bootstrap-sass/lib/navs";
+@import "../third-party/bootstrap-sass/lib/navbar";
+@import "../third-party/bootstrap-sass/lib/breadcrumbs";
+@import "../third-party/bootstrap-sass/lib/pagination";
+@import "../third-party/bootstrap-sass/lib/pager";
+
+// Components: Popovers
+@import "../third-party/bootstrap-sass/lib/modals";
+@import "../third-party/bootstrap-sass/lib/tooltip";
+@import "../third-party/bootstrap-sass/lib/popovers";
+
+// Components: Misc
+@import "../third-party/bootstrap-sass/lib/thumbnails";
+@import "../third-party/bootstrap-sass/lib/media";
+@import "../third-party/bootstrap-sass/lib/labels-badges";
+@import "../third-party/bootstrap-sass/lib/progress-bars";
+@import "../third-party/bootstrap-sass/lib/accordion";
+@import "../third-party/bootstrap-sass/lib/carousel";
+@import "../third-party/bootstrap-sass/lib/hero-unit";
+
+// Utility classes
+@import "../third-party/bootstrap-sass/lib/utilities"; // Has to be last to override when necessary
+
+
+// IE10 Metro responsive
+// Required for Windows 8 Metro split-screen snapping with IE10
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+//@-ms-viewport{
+//  width: device-width;
+//}
+
+
+// RESPONSIVE CLASSES
+// ------------------
+//@import "../third-party/bootstrap-sass/lib/responsive-utilities";
+
+
+// MEDIA QUERIES
+// ------------------
+
+// Large desktops
+//@import "../third-party/bootstrap-sass/lib/responsive-1200px-min";
+
+// Tablets to regular desktops
+//@import "../third-party/bootstrap-sass/lib/responsive-768px-979px";
+
+// Phones to portrait tablets and narrow desktops
+//@import "../third-party/bootstrap-sass/lib/responsive-767px-max";
+
+
+// RESPONSIVE NAVBAR
+// ------------------
+
+// From 979px and below, show a button to toggle navbar contents
+//@import "../third-party/bootstrap-sass/lib/responsive-navbar";
+
+
+
+
+// PROJECT
+// ------------------
+@import "mixins";
+@import "extends";
+
+// Partials
+@import "partials/header";
+@import "partials/footer";
+@import "partials/navigation";
+@import "partials/content";
+@import "partials/content";
+
+// Widgets
+//@import "widgets/widget-xyz";
+
+
+// Media Queries
+// Large desktops
+//@import "responsive/responsive-1200px-min";
+
+// Tablets to regular desktops
+//@import "responsive/responsive-768px-979px";
+
+// Phones to portrait tablets and narrow desktops
+//@import "responsive/responsive-767px-max";

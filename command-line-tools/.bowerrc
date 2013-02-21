@@ -1,0 +1,5 @@
+{
+  "directory" : "../assets/third-party",
+  "json"      : "component.json",
+  "endpoint"  : "https://bower.herokuapp.com"
+}
