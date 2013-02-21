@@ -24,8 +24,8 @@ Install third-party libraries
 
 Install node modules:
 
-```chmod 777 setup-grunt.sh```
-```./setup-grunt.sh```
+```chmod 777 setup-grunt.sh
+./setup-grunt.sh```
 
 Run Grunt:
 
