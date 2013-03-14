@@ -10,7 +10,7 @@ module.exports = function (grunt) {
     meta: {
       banner: '/**\n' +
         ' * Project: <%= pkg.title || pkg.name %>\n' +
-        ' * Version: <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n' +
+        ' * Version: <%= pkg.project_version %> - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n' +
         ' * Homepage: <%= pkg.homepage %>\n' +
         ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.company %>\n' +
         ' * Author: <%= pkg.author.name %>\n' +
@@ -35,15 +35,17 @@ module.exports = function (grunt) {
         }
       },
       prod: {
-        environment: 'production',
-        outputStyle: 'compressed',
-        sassDir: '../assets/sass',
-        cssDir: '../assets/css/dev',
-        imagesDir: '../assets/images',
-        javascriptsDir: '../assets/js',
-        fontsDir: '../assets/fonts',
-        noLineComments: true,
-        relativeAssets: true
+        options: {
+          environment: 'production',
+          outputStyle: 'compressed',
+          sassDir: '../assets/sass',
+          cssDir: '../assets/css/prod',
+          imagesDir: '../assets/images',
+          javascriptsDir: '../assets/js',
+          fontsDir: '../assets/fonts',
+          noLineComments: true,
+          relativeAssets: true
+        }
       }
     },
 
