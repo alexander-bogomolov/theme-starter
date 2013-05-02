@@ -23,28 +23,12 @@ module.exports = function (grunt) {
     compass: {
       dev: {
         options: {
-          environment: 'development',
-          outputStyle: 'expanded',
-          sassDir: '../assets/sass',
-          cssDir: '../assets/css/dev',
-          imagesDir: '../assets/images',
-          javascriptsDir: '../assets/js',
-          fontsDir: '../assets/fonts',
-          noLineComments: false,
-          relativeAssets: true
+          config: 'compass-config-dev.rb'
         }
       },
       prod: {
         options: {
-          environment: 'production',
-          outputStyle: 'compressed',
-          sassDir: '../assets/sass',
-          cssDir: '../assets/css/prod',
-          imagesDir: '../assets/images',
-          javascriptsDir: '../assets/js',
-          fontsDir: '../assets/fonts',
-          noLineComments: true,
-          relativeAssets: true
+          config: 'compass-config-prod.rb'
         }
       }
     },
@@ -65,7 +49,6 @@ module.exports = function (grunt) {
         eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
         forin: true, // This option requires all for in loops to filter object's items.
         immed: true, // This option prohibits the use of immediate function invocations without wrapping them in parentheses.
-        indent: 2, // This option enforces specific tab width for your code.
         latedef: true, // This option prohibits the use of a variable before it was defined.
         newcap: true, // This option requires you to capitalize names of constructor functions.
         noarg: true, // This option prohibits the use of arguments.caller and arguments.callee. Both .caller and .callee make quite a few optimizations impossible so they were deprecated in future versions of JavaScript.
