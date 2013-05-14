@@ -146,6 +146,8 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['jshint:beforeconcat', 'qunit']);
   grunt.registerTask('css-dev', ['compass:dev']);
   grunt.registerTask('css-prod', ['compass:prod']);
+  grunt.registerTask('js-dev', ['jshint:beforeconcat', 'concat']);
+  grunt.registerTask('js-prod', ['jshint:beforeconcat', 'concat', 'uglify']);
   grunt.registerTask('default', ['compass:dev', 'jshint:beforeconcat', 'concat']);
   grunt.registerTask('prod', ['compass:prod', 'jshint:beforeconcat', 'concat', 'uglify']);
 
