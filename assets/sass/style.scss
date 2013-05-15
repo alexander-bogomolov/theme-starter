@@ -1,10 +1,12 @@
 /*!
  * Project:
- * Version: 0.0.0 - 2013-01-01
- * Homepage: http://www.eos-uptrade.de
- * Copyright (c) 2013 EOS UPTRADE GmbH
+ * Version: 0.0.0 - 2013-05-15
+ * Homepage: http://www.bogomolov.de
+ * Copyright (c) 2013 Alexander Bogomolov
  * Author: Alexander Bogomolov
  */
+
+@import "compass";
 
 // Core variables and mixins
 @import "../third-party/bootstrap-sass/lib/variables";
@@ -108,7 +110,7 @@
 @import "partials/footer";
 @import "partials/navigation";
 @import "partials/content";
-@import "partials/content";
+@import "partials/sidebar";
 
 // Widgets
 //@import "widgets/widget-xyz";

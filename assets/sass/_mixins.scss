@@ -1,0 +1,26 @@
+@mixin rect($width, $height) {
+  width:  $width;
+  height: $height;
+}
+
+@mixin square($width) {
+  @include rect($width, $width);
+}
+
+@mixin position-absolute($top: false, $right: false, $bottom: false, $left: false) {
+  position: absolute;
+
+  @if $top {
+    top: $top;
+  }
+
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+}
