@@ -128,9 +128,15 @@ module.exports = function (grunt) {
         '<%= jshint.beforeconcat %>'
       ],
       tasks: ['default']
+    },
+
+
+    concurrent: {
+      dev: ['compass:dev', 'jshint:beforeconcat', 'concat']
     }
 
   });
+
 
   // Load modules
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -139,6 +145,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   // Register Tasks
   // Run: grunt taskname
@@ -148,7 +155,10 @@ module.exports = function (grunt) {
   grunt.registerTask('css-prod', ['compass:prod']);
   grunt.registerTask('js-dev', ['jshint:beforeconcat', 'concat']);
   grunt.registerTask('js-prod', ['jshint:beforeconcat', 'concat', 'uglify']);
-  grunt.registerTask('default', ['compass:dev', 'jshint:beforeconcat', 'concat']);
-  grunt.registerTask('prod', ['compass:prod', 'jshint:beforeconcat', 'concat', 'uglify']);
+  grunt.registerTask('prod', ['compass:dev', 'compass:prod', 'jshint:beforeconcat', 'concat', 'uglify']);
+  grunt.registerTask('dev', ['compass:dev', 'jshint:beforeconcat', 'concat']);
+
+  grunt.registerTask('default', ['concurrent:dev']);
+
 
 };

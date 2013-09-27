@@ -1,9 +1,12 @@
 function Application() {}
 
 
-Application.prototype = {
-
-  init: function() {}
-  
+Application.prototype.init = function() {
 
 };
+
+$(document).ready(function() {
+
+
+
+});
