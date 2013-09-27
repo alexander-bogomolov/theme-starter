@@ -1,11 +1,11 @@
 {
-  "name": "Project",
-  "version": "0.0.0",
+  "name":         "Project",
+  "version":      "0.0.0",
   "dependencies": {
 
-    "bootstrap-sass": "2.3.*",
-    "html5shiv": "git://github.com/aFarkas/html5shiv.git#3.6.2",
-    "html5-boilerplate": "git://github.com/h5bp/html5-boilerplate.git#v4.2.0"
+    "bootstrap-sass":    "2.3.*",
+    "html5shiv":         "3.*",
+    "html5-boilerplate": "4.*"
 
   }
 }
