@@ -1,11 +1,3 @@
-@mixin rect($width, $height) {
-  width:  $width;
-  height: $height;
-}
-
-@mixin square($width) {
-  @include rect($width, $width);
-}
 
 @mixin position-absolute($top: false, $right: false, $bottom: false, $left: false) {
   position: absolute;
@@ -41,26 +33,6 @@
   @else if $point == small {
     @media (min-width: 37.5em)  { @content; }
   }
-}
-
-// Retina Images
-@mixin image-2x($image, $width, $height) {
-  @media (min--moz-device-pixel-ratio: 1.3),
-  (-o-min-device-pixel-ratio: 2.6/2),
-  (-webkit-min-device-pixel-ratio: 1.3),
-  (min-device-pixel-ratio: 1.3),
-  (min-resolution: 1.3dppx) {
-  /* on retina, use image that's scaled by 2 */
-    background-image: url($image);
-    background-size: $width $height;
-  }
-}
-
-// Text Overflow
-@mixin text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 // Font Size

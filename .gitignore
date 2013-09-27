@@ -3,6 +3,7 @@
 
 assets/css/dev/*
 assets/css/prod/*
+assets/third-party/*
 command-line-tools/.sass-cache/
 command-line-tools/node_modules/*
 
