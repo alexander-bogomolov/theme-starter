@@ -1,50 +1,45 @@
+%vertical-align {
+  position: relative;
+  top: 50%;
+  @include translateY(-50%);
+}
 
-@mixin position-absolute($top: false, $right: false, $bottom: false, $left: false) {
-  position: absolute;
+%no-margin-and-padding {
+  margin:           0;
+  padding:          0;
+}
 
-  @if $top {
-    top: $top;
-  }
-
-  @if $right {
-    right: $right;
-  }
-  @if $bottom {
-    bottom: $bottom;
-  }
-  @if $left {
-    left: $left;
-  }
+@function rem($value: 12, $base: 16) {
+  @return ($value / $base) * 1rem
 }
 
 
-// Handy Sass Mixins by Jake Bresnehan
-// http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
-// ----------------------
+@mixin x-rem($property, $values, $base: 16) {
+  @if type-of($values) == "number" {
+    #{$property}: $values+px;
+    #{$property}: rem($values, $base);
+  } @else {
+    $rem-values: unquote("");
+    $px-values: unquote("");
 
-// Responsive Breakpoints
-@mixin breakpoint($point) {
-  @if $point == large {
-    @media (min-width: 64.375em) { @content; }
-  }
-  @else if $point == medium {
-    @media (min-width: 50em) { @content; }
-  }
-  @else if $point == small {
-    @media (min-width: 37.5em)  { @content; }
+    @each $value in $values {
+      @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+        $px-values: append($px-values, $value + px);
+        $rem-values: append($rem-values, rem($value, $base));
+      } @else {
+        $px-values: append($px-values, $value + px);
+        $rem-values: append($rem-values, rem($value, $base));
+      }
+    }
+
+    #{$property}: $px-values;
+    #{$property}: $rem-values;
   }
 }
 
 // Font Size
 @mixin font-size($size: 12, $base: 16) {
-  font-size: $size; // fallback for old browsers
-  font-size: ($size / $base) * 1rem;
-}
-
-// Line Height
-@mixin line-height($heightValue: 12, $base: 16){
-  line-height: $heightValue + px; //fallback for old browsers
-  line-height: ($size / $base) * 1rem;
+  @include x-rem('font-size', $size, $base);
 }
 
 

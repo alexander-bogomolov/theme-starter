@@ -17,7 +17,6 @@ module.exports = function (grunt) {
           ' */'
     },
 
-
     // Compass
     // Define configuration for the compass module: grunt-contrib-compass
     compass: {
@@ -32,7 +31,6 @@ module.exports = function (grunt) {
         }
       }
     },
-
 
     // Detect errors and potential problems in JavaScript code
     // and used to enforce coding conventions.
@@ -79,17 +77,16 @@ module.exports = function (grunt) {
 
     },
 
-
     // Concatenate all JavaScript files in one file: application.js
     concat:  {
       options:     {
         // define a string to put between each file in the concatenated output
-        separator: ';'
+        separator: ';',
+        banner:    '<%= meta.banner %>'
       },
       application: {
         src:
               [
-                '<banner>',
                 // ThirdParty
                 // '../assets/third-party/',
 
@@ -103,14 +100,16 @@ module.exports = function (grunt) {
       }
     },
 
-
     // Minify the concated JavaScript file.
     uglify:  {
+      options:     {
+        report: 'gzip',
+        banner: '<%= meta.banner %>'
+      },
       application: {
         files: {
           '../assets/js/application.min.js':
               [
-                '<banner>',
                 '<%= concat.application.dest %>'
               ]
         }
@@ -148,7 +147,6 @@ module.exports = function (grunt) {
           ]
     },
 
-
     // Watch Task
     watch:    {
       files:
@@ -163,7 +161,6 @@ module.exports = function (grunt) {
           ]
     },
 
-
     concurrent: {
       dev:
           [
@@ -172,7 +169,6 @@ module.exports = function (grunt) {
             'concat'
           ]
     }
-
   });
 
 

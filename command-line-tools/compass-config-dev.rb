@@ -5,13 +5,14 @@ http_path = "/"
 css_dir = "../assets/css/dev"
 sass_dir = "../assets/sass"
 images_dir = "../assets/images"
+generated_images_dir = "../assets/images/sprites"
 javascripts_dir = "../assets/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
-# relative_assets = true
+relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
@@ -22,3 +23,5 @@ javascripts_dir = "../assets/js"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+require File.join(File.dirname(__FILE__), 'functions.rb')
