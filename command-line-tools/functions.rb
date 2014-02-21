@@ -18,9 +18,6 @@ module Sass::Script::Functions
         header = header + " * Homepage: "+ parsed['homepage'] +"\n"
         header = header + " * Copyright (c) "+ year +" "+ parsed['agency'] +"\n"
 
-
-        authors = Array.new
-
         header = header + " * Author: "
         parsed['author'].each do |key, value|
             header = header + value +" ";
