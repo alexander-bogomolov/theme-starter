@@ -10,3 +10,4 @@ npm install grunt-contrib-uglify --save-dev
 npm install grunt-concurrent --save-dev
 npm install grunt-htmlhint --save-dev
 npm install grunt-bower-task --save-dev
+npm install grunt-combine-media-queries --save-dev

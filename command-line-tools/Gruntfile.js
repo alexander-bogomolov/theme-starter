@@ -9,12 +9,12 @@ module.exports = function (grunt) {
     // Generates comment block over the code.
     meta:    {
       banner: '/**\n' +
-                  ' * Project: <%= pkg.title || pkg.name %>\n' +
-                  ' * Version: <%= pkg.project_version %> - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n' +
-                  ' * Homepage: <%= pkg.homepage %>\n' +
-                  ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.company %>\n' +
-                  ' * Author: <%= pkg.author.name %>\n' +
-          ' */'
+                ' * Project: <%= pkg.title || pkg.name %>\n' +
+                ' * Version: <%= pkg.project_version %> - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n' +
+                ' * Homepage: <%= pkg.homepage %>\n' +
+                ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.company %>\n' +
+                ' * Author: <%= pkg.author.name %>\n' +
+        ' */'
     },
 
     // Compass
@@ -32,17 +32,27 @@ module.exports = function (grunt) {
       }
     },
 
+    cmq:    {
+      options: {
+        log: false
+      },
+      prod:    {
+        files: {
+          'output': ['../assets/css/prod/*.css']
+        }
+      }
+    },
+
     // Detect errors and potential problems in JavaScript code
     // and used to enforce coding conventions.
-    jshint:  {
-      beforeconcat:
-               [
-                 'Gruntfile.js',
-                 '../assets/js/modules/**/*.js',
-                 '../assets/js/modules/*.js',
-                 '../assets/js/init/*.js'
-               ],
-      options: {
+    jshint: {
+      beforeconcat: [
+        'Gruntfile.js',
+        '../assets/js/modules/**/*.js',
+        '../assets/js/modules/*.js',
+        '../assets/js/init/*.js'
+      ],
+      options:      {
         // Enforcing Options - These options tell JSHint to be more strict towards your code.
         curly:    true, // This option requires you to always put curly braces around blocks in loops and conditionals.
         eqeqeq:   true, // This options prohibits the use of == and != in favor of === and !==.
@@ -78,40 +88,38 @@ module.exports = function (grunt) {
     },
 
     // Concatenate all JavaScript files in one file: application.js
-    concat:  {
+    concat: {
       options:     {
         // define a string to put between each file in the concatenated output
         separator: ';',
         banner:    '<%= meta.banner %>'
       },
       application: {
-        src:
-              [
-                // ThirdParty
-                // '../assets/third-party/',
+        src:  [
+          // ThirdParty
+          // '../assets/third-party/',
 
-                // Globale Module
-                // '../assets/js/modules/',
+          // Globale Module
+          // '../assets/js/modules/',
 
-                // Inits
-                '../assets/js/init/application.init.js'
-              ],
+          // Inits
+          '../assets/js/init/application.init.js'
+        ],
         dest: '../assets/js/application.js'
       }
     },
 
     // Minify the concated JavaScript file.
-    uglify:  {
+    uglify: {
       options:     {
         report: 'gzip',
         banner: '<%= meta.banner %>'
       },
       application: {
         files: {
-          '../assets/js/application.min.js':
-              [
-                '<%= concat.application.dest %>'
-              ]
+          '../assets/js/application.min.js': [
+            '<%= concat.application.dest %>'
+          ]
         }
       }
     },
@@ -131,43 +139,38 @@ module.exports = function (grunt) {
           'img-alt-require':          true,
           'id-class-value':           'dash'
         },
-        src:
-                 [
-                   '../html/*.html',
-                   '../html/*.php'
-                 ]
+        src:     [
+          '../html/*.html',
+          '../html/*.php'
+        ]
       }
     },
 
     // Run QUnit - JavaScript unit testing framework
     qunit:    {
-      files:
-          [
-            '../assets/test/**/*.html'
-          ]
+      files: [
+        '../assets/test/**/*.html'
+      ]
     },
 
     // Watch Task
     watch:    {
-      files:
-          [
-            '../assets/sass/*',
-            '../assets/sass/**/*',
-            '<%= jshint.beforeconcat %>'
-          ],
-      tasks:
-          [
-            'default'
-          ]
+      files: [
+        '../assets/sass/*',
+        '../assets/sass/**/*',
+        '<%= jshint.beforeconcat %>'
+      ],
+      tasks: [
+        'default'
+      ]
     },
 
     concurrent: {
-      dev:
-          [
-            'compass:dev',
-            'jshint:beforeconcat',
-            'concat'
-          ]
+      dev: [
+        'compass:dev',
+        'jshint:beforeconcat',
+        'concat'
+      ]
     }
   });
 
@@ -181,58 +184,61 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-htmlhint');
+  grunt.loadNpmTasks('grunt-combine-media-queries');
 
 
   // Register Tasks
   // Run: grunt taskname
   // Example: grunt css
+
+  grunt.registerTask('cmq', 'cmq');
   grunt.registerTask('test',
-      [
-        'jshint:beforeconcat',
-        'qunit'
-      ]);
+    [
+      'jshint:beforeconcat',
+      'qunit'
+    ]);
   grunt.registerTask('html',
-      [
-        'htmlhint:build'
-      ]);
+    [
+      'htmlhint:build'
+    ]);
   grunt.registerTask('css-dev',
-      [
-        'compass:dev'
-      ]);
+    [
+      'compass:dev'
+    ]);
   grunt.registerTask('css-prod',
-      [
-        'compass:prod'
-      ]);
+    [
+      'compass:prod'
+    ]);
   grunt.registerTask('js-dev',
-      [
-        'jshint:beforeconcat',
-        'concat'
-      ]);
+    [
+      'jshint:beforeconcat',
+      'concat'
+    ]);
   grunt.registerTask('js-prod',
-      [
-        'jshint:beforeconcat',
-        'concat',
-        'uglify'
-      ]);
+    [
+      'jshint:beforeconcat',
+      'concat',
+      'uglify'
+    ]);
   grunt.registerTask('prod',
-      [
-        'compass:dev',
-        'compass:prod',
-        'jshint:beforeconcat',
-        'concat',
-        'uglify'
-      ]);
+    [
+      'compass:dev',
+      'compass:prod',
+      'jshint:beforeconcat',
+      'concat',
+      'uglify'
+    ]);
   grunt.registerTask('dev',
-      [
-        'compass:dev',
-        'jshint:beforeconcat',
-        'concat'
-      ]);
+    [
+      'compass:dev',
+      'jshint:beforeconcat',
+      'concat'
+    ]);
 
   grunt.registerTask('default',
-      [
-        'concurrent:dev'
-      ]);
+    [
+      'concurrent:dev'
+    ]);
 
 
 };
