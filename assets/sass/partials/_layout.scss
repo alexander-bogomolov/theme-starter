@@ -1,0 +1,26 @@
+.container {
+  @include container;
+}
+
+.page-header {
+  background-color: #4caf50;
+}
+
+.page-main {
+}
+
+.page-sidebar {
+  @include span(4 omega);
+  background-color: #ffca28;
+}
+
+.page-content {
+  @include span(8);
+  background-color: #ff8a65;
+}
+
+.page-footer {
+  clear:            both;
+  background-color: #4caf50;
+  color:            #fff;
+}

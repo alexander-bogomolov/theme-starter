@@ -1,0 +1,21 @@
+{
+  "in":           [
+    "../assets/css/dev/style.css"
+  ],
+  "out":          "../assets/css/dev/style.fixed.css",
+  "autoprefixer": {
+    "browsers": [
+      "> 1%",
+      "last 10 versions",
+      "Firefox ESR",
+      "Opera 12.1"
+    ],
+    "cascade":  true
+  },
+  "minifier":     false,
+  "filters":      {"oldIE": true},
+  "rem":          [
+    "16px",
+    {"replace": false}
+  ]
+}

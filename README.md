@@ -1,9 +1,10 @@
 # Theme-Starter
 
-HTML, Grunt, Compass, Bower &amp; Twitter Bootstrap
+HTML, Grunt, Sass, Compass, Susy &amp; Bower
 
 ## Requirements
 * Node.js, npm
+* Bundler (gem install bundler)
 * Bower (npm install bower -g)
 * Grunt CLI (npm install -g grunt-cli)
 
@@ -24,7 +25,11 @@ Install third-party libraries
 
 Install node modules:
 
-```chmod 777 setup-grunt.sh && ./setup-grunt.sh```
+```npm install```
+
+Install gems (Sass, Compass, Susy):
+
+```bundler install```
 
 Run Grunt:
 

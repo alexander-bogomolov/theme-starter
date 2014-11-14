@@ -18,23 +18,23 @@
 
     <link rel="stylesheet" href="../assets/css/dev/style.css" media="all" />
 
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicons/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/favicons/apple-touch-icon.png">
 
     <!-- iPad, Retina, iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/images/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/images/favicons/apple-touch-icon-152x152-precomposed.png">
     <!-- iPad, Retina, iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/images/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/images/favicons/apple-touch-icon-144x144-precomposed.png">
     <!-- iPhone, Retina, iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/images/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/images/favicons/apple-touch-icon-120x120-precomposed.png">
     <!-- iPhone, Retina,  iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/images/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/images/favicons/apple-touch-icon-114x114-precomposed.png">
     <!-- iPad mini, iPad 1. und 2. Generation, iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/images/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/images/favicons/apple-touch-icon-76x76-precomposed.png">
     <!-- iPad mini, iPad 1. und 2. Generation, iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/images/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/images/favicons/apple-touch-icon-72x72-precomposed.png">
     <!-- Non-Retina iPhone, iPod Touch und Android 2.1+: -->
-    <link rel="apple-touch-icon-precomposed" href="../assets/images/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/images/favicons/apple-touch-icon-precomposed.png">
 
     <!-- Windows-Taskbar -->
     <meta name="application-name" content="">
@@ -43,10 +43,14 @@
     <!-- Windows 8 -->
     <meta name="application-name" content=""/>
     <meta name="msapplication-TileColor" content="#ffffff"/>
-    <meta name="msapplication-square70x70logo" content="../assets/images/windows-8-tiny.png"/>
-    <meta name="msapplication-square150x150logo" content="../assets/images/windows-8-square.png"/>
-    <meta name="msapplication-wide310x150logo" content="../assets/images/windows-8-wide.png"/>
-    <meta name="msapplication-square310x310logo" content="../assets/images/windows-8-large.png"/>
+    <meta name="msapplication-square70x70logo" content="../assets/images/favicons/windows-8-tiny.png"/>
+    <meta name="msapplication-square150x150logo" content="../assets/images/favicons/windows-8-square.png"/>
+    <meta name="msapplication-wide310x150logo" content="../assets/images/favicons/windows-8-wide.png"/>
+    <meta name="msapplication-square310x310logo" content="../assets/images/favicons/windows-8-large.png"/>
+
+    <!-- Google Chrome -->
+    <meta name="theme-color" content="#24a0de" >
+    <link rel="icon" sizes="192×192" href="../assets/images/favicons/google-chrome-192x192.png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="">
@@ -56,7 +60,7 @@
     <meta property="og:image" content="">
 
     <!--[if lt IE 9]>
-    <script src="../assets/third-party/html5shiv/dist/html5shiv-printshiv.js"></script>
+    <script src="../assets/vendor/html5shiv/dist/html5shiv.min.js"></script>
     <![endif]-->
 
     <script type="text/javascript">
@@ -81,44 +85,48 @@
   <body>
 
     <div class="container">
-      <header class="row page-header">
+      <header class="page-header">
         <a class="page-logo" href="" title="">
           <img src="../assets/images/logo.png" title="" alt="" />
         </a>
+
+        <nav class="page-navigation">
+          <ul>
+            <li><a href="#" title="">Item 1</a></li>
+            <li><a href="#" title="">Item 2</a></li>
+            <li><a href="#" title="">Item 3</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <nav class="page-navigation">
-        <ul>
-          <li><a href="#" title="">Item 1</a></li>
-          <li><a href="#" title="">Item 2</a></li>
-          <li><a href="#" title="">Item 3</a></li>
-        </ul>
-      </nav>
+      <main class="page-main">
 
-      <div class="row">
-
-        <aside class="page-sidebar col-md-4">
+        <aside class="page-sidebar">
+          Sidebar
         </aside>
 
-        <section class="page-content col-md-8">
-          <article>
-            <header>
+        <section class="page-content">
+          <article class="widget-article">
+            <header class="article-header">
               <h1>Headline</h1>
             </header>
-            <div class="widget-body">
+            <div class="article-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, culpa expedita. At blanditiis cupiditate debitis dolores eligendi exercitationem facere in incidunt, officiis perferendis quas quo sapiente sequi sit suscipit tempora.
             </div>
-            <footer></footer>
+            <footer class="article-footer">
+
+            </footer>
           </article>
         </section>
-      </div>
+      </main>
 
-      <footer class="page-footer row">
-
+      <footer class="page-footer">
+        <p class="copyright">Powered by <a href="http://www.bogomolov.de/">Alexander Bogomolov</a></p>
       </footer>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../assets/third-party/jquery/jquery.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../assets/vendor/jquery/jquery.min.js"><\/script>')</script>
     <script src="../assets/js/application.js"></script>
   </body>
 </html>

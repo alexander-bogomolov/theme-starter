@@ -1,3 +1,19 @@
-$icon-font-path:          "../third-party/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$susy: (
+         columns: 12,
+         gutters: 1/4,
+         gutter-position: after, // before | after | split | inside | inside-static
+         math: fluid, // fluid | static
+         output: float, // float | isolate
+         container: 1280px,
+         global-box-sizing: border-box,
+         box-sizing: border-box,
+         flow: ltr,
+         debug: (
+           image: show,
+           color: blue,
+           output: overlay,
+           toggle: bottom right,
+         ),
+       );
 
 $font-size-base: 16px;

@@ -1,73 +1,25 @@
 /*!
  #{header()}
  */
-
 @import "compass";
+@import "susy";
 
 
-// Core variables and mixins
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables";
-@import "variables"; // Überschreiben von Variablen aus Bootstrap
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins";
+
+@import "variables";
 @import "mixins";
-
-// Reset
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/normalize";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/print";
-
-// Core CSS
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/type";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/code";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/grid";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/tables";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons";
-
-// Components
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/component-animations";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/glyphicons";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/dropdowns";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/button-groups";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/input-groups";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navs";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navbar";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/breadcrumbs";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/pagination";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/pager";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/labels";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/badges";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/jumbotron";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/thumbnails";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/alerts";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/progress-bars";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/media";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/list-group";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/panels";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/wells";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/close";
-
-// Components w/ JavaScript
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/modals";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/tooltip";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/popovers";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/carousel";
-
-// Utility classes
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/utilities";
-@import "../third-party/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/responsive-utilities";
-
-
-// PROJECT
-// ------------------
 @import "extends";
 
+@import "../vendor/normalize.scss/normalize";
+
 // Partials
+@import "partials/layout";
 @import "partials/header";
 @import "partials/footer";
 @import "partials/navigation";
 @import "partials/content";
 @import "partials/sidebar";
+@import "partials/links";
 
 // Widgets
 //@import "widgets/widget-xyz";

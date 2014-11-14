@@ -24,6 +24,7 @@ Application.prototype.init = function () {
 
 $(document).ready(function () {
 
-
+  var application = new Application();
+  application.init();
 
 });

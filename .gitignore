@@ -1,11 +1,12 @@
 # Ignore paths that contain generated content.
 .idea/
 
-assets/css/dev/*
-assets/css/prod/*
-assets/third-party/*
-command-line-tools/.sass-cache/
-command-line-tools/node_modules/*
-
+assets/css/
 assets/js/application.js
+assets/js/application.js.map
 assets/js/application.min.js
+
+assets/vendor/
+command-line-tools/.sass-cache/
+command-line-tools/node_modules/
+command-line-tools/Gemfile.lock
