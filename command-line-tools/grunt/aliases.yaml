@@ -1,0 +1,64 @@
+default:
+  description: 'Default (production) build'
+  tasks:
+    - 'compass:dev'
+    - 'pleeease:dev'
+    - 'pleeease:prod'
+    - 'jshint:defaults'
+
+images:
+  description: ''
+  tasks:
+    - 'imagemin:uploads'
+    
+test:
+  description: ''
+  tasks:
+    - 'qunit'
+
+test-config:
+  description: ''
+  tasks:
+    - 'jshint:configuration'
+
+css-dev:
+  description: ''
+  tasks:
+    - 'compass:dev'
+    - 'pleeease:dev'
+
+css-prod:
+  description: ''
+  tasks:
+    - 'compass:dev'
+    - 'pleeease:prod'
+
+js-dev:
+  description: ''
+  tasks:
+    - 'jshint:defaults'
+    - 'uglify:dev'
+
+js-prod:
+  description: ''
+  tasks:
+    - 'jshint:defaults'
+    - 'uglify:prod'
+
+prod:
+  description: ''
+  tasks:
+    - 'compass:dev'
+    - 'pleeease:dev'
+    - 'pleeease:prod'
+    - 'jshint:defaults'
+    - 'uglify:dev'
+    - 'uglify:prod'
+
+dev:
+  description: ''
+  tasks:
+    - 'compass:dev'
+    - 'pleeease:dev'
+    - 'jshint:defaults'
+    - 'uglify:dev'

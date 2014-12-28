@@ -1,0 +1,24 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "undef": true,
+  "unused": true,
+  "trailing": false,
+  "boss": true,
+  "debug": false,
+  "eqnull": true,
+  "evil": true,
+  "onecase": true,
+  "sub": true,
+  "white": false,
+  "browser": true,
+  "devel": true,
+
+  "node": true,
+  "jquery": true
+}

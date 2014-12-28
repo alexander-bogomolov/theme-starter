@@ -5,24 +5,32 @@ module Sass::Script::Functions
         return Sass::Script::String.new(Time.now.to_s)
     end
 
-    def header()
+    def banner()
         parsed = JSON.parse( IO.read('package.json') )
 
         time = Time.now
         build = time.to_s
         year = time.year.to_s
 
-        header = "* Project: "+ parsed['title'] +"\n"
-        header = header + " * Version: "+ parsed['project_version'] +"\n"
-        header = header + " * Build: "+ build +"\n"
-        header = header + " * Homepage: "+ parsed['homepage'] +"\n"
-        header = header + " * Copyright (c) "+ year +" "+ parsed['agency'] +"\n"
+        banner =  "* Project: "+ parsed['title']
+        banner += "\n"
+        banner += "* Version: "+ parsed['version']
+        banner += "\n"
+        banner += "\n"
 
-        header = header + " * Author: "
+        banner += " * Author: "
         parsed['author'].each do |key, value|
-            header = header + value +" ";
+            banner += value +" ";
         end
+        banner += "* Homepage: "+ parsed['homepage']
+        banner += "\n"
+        banner += "* Copyright (c) "+ year +" "+ parsed['company']
+        banner += "\n"
+        banner += "\n"
 
-        return Sass::Script::String.new(header)
+        banner += "* Build: "+ build
+        banner += "\n"
+
+        Sass::Script::String.new(banner)
     end
 end
