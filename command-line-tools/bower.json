@@ -1,11 +1,10 @@
 {
-  "name":         "Project",
-  "version":      "0.0.0",
+  "name": "Project",
+  "version": "0.0.0",
   "dependencies": {
-
-    "html5shiv":          "~3.7.2",
-    "html5-boilerplate":  "~4.3.0",
-    "normalize.scss":     "3.0.1+normalize.3.0.1"
-
+    "html5shiv": "~3.7.2",
+    "html5-boilerplate": "~4.3.0",
+    "normalize.scss": "3.0.1+normalize.3.0.1",
+    "susy": "~2.1.3"
   }
 }

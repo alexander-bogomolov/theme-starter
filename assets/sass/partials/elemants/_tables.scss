@@ -1,0 +1,35 @@
+table {
+
+  .responsive & {
+
+  }
+
+  .striped {
+
+  }
+
+  thead {
+  }
+
+  tfoot {
+  }
+  tbody {
+  }
+
+  tr {
+
+    &:nth-child(odd) {
+    }
+
+    &:nth-child(even) {
+    }
+  }
+
+  th {
+
+  }
+
+  td {
+  }
+
+}

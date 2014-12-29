@@ -1,6 +1,5 @@
 /*global module:false*/
 module.exports = function (grunt) {
-  //var mozjpeg = require('imagemin-mozjpeg');
 
   require('time-grunt')(grunt);
 
@@ -21,16 +20,5 @@ module.exports = function (grunt) {
       ' */'
     }
   });
-
-  //// Project configuration
-  //grunt.initConfig({
-  //  pkg:  grunt.file.readJSON('package.json')
-  //
-  //  // Meta data
-  //  // Generates comment block over the code.
-  //  meta: {
-  //  }
-  //
-  //});
 
 };

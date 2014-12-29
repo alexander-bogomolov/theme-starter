@@ -8,9 +8,9 @@ module.exports = {
     files:   [
       {
         expand: true,                       // Enable dynamic expansion
-        cwd:    '../uploads/',        // Src matches are relative to this path
+        cwd:    '../uploads/',              // Src matches are relative to this path
         src:    ['**/**/*.{png,jpg,gif}'],  // Actual patterns to match
-        dest:   '../uploads-opt/'     // Destination path prefix
+        dest:   '../uploads-output/'        // Destination path prefix
       }
     ]
   }

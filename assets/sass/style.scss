@@ -1,25 +1,22 @@
-/*!
- #{banner()}
- */
-@import "compass";
-@import "susy";
-
-
+@import "../vendor/susy/sass/susy";
 
 @import "variables";
 @import "mixins";
 @import "extends";
 
-@import "../vendor/normalize.scss/normalize";
-
 // Partials
+@import "partials/elemants/headlines";
+@import "partials/elemants/links";
+@import "partials/elemants/lists";
+@import "partials/elemants/tables";
+
 @import "partials/layout";
 @import "partials/header";
 @import "partials/footer";
 @import "partials/navigation";
 @import "partials/content";
 @import "partials/sidebar";
-@import "partials/links";
+
 
 // Widgets
-//@import "widgets/widget-xyz";
+@import "widgets/widget-tabs";
